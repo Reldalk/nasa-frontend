@@ -1,0 +1,33 @@
+<div class="fullPage">
+  <div class="block"></div>
+  <nav-bar [showSearchBar]="false"></nav-bar>
+
+  <body class="searchBody">
+    <div class="pictureClickBox">
+      <picture-clicked-box *ngIf=this.currentPicture [currentPicture]="this.currentPicture"
+        (toExit)="exit()">
+      </picture-clicked-box>
+    </div>
+    <div class="searchBoxContainer">
+      <div class="searchBox">
+        <button (click)="previousButton()" class="previousButton">Previous</button>
+        <button (click)="nextButton()" class="nextButton">Next</button>
+        <div class="countContainer">
+          <p>Viewing {{this.viewingNumber}} - {{(this.viewingNumber + 35) > this.count ? this.count 
+            : (this.viewingNumber + 35)}} of {{this.count}} total images</p>
+        </div>
+        <div class="searchBarContainer">
+          <input placeholder="Insert search term here" class="searchBar" type="text" name="firstname">
+          <img (click)="searchClick()" class="searchButton" src="http://www.clker.com/cliparts/F/G/4/L/Q/f/search-button-png-hi.png">
+        </div>
+        <div class="nonFlex">
+          <div class="imageContainer">
+            <div *ngFor="let image of searchResults; let i = index">
+              <img (click)="pictureClick($event)" id={{i}} class="image" src="{{image.thumbnail}}">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</div>

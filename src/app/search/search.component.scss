@@ -1,0 +1,218 @@
+.fullPage{
+  overflow: hidden;
+  height: 100vh;
+  background: no-repeat center center fixed url('https://apod.nasa.gov/apod/image/1901/sombrero_spitzer_3000.jpg');
+  background-size: cover;
+}
+
+.block{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 1;
+  display: none;
+}
+
+.countContainer{
+  height: 7%;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  text-align: center;
+  justify-content: center;
+}
+
+a:visited{
+  color: white;
+}
+
+.pictureClickBoxContainer{
+  height: 100%;
+  width: 100%;
+}
+
+.searchBody{
+  height: 92vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.searchBoxContainer{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBox{
+  position: relative;
+  overflow: auto;
+  width: 950px;
+  height: 800px;
+  max-height: 90vh;
+  background-color: rgba(0,0,0,0.40);
+}
+
+.searchBar{
+  height: 55%;
+  width: 30%;
+  text-align: center;
+  font-size: 1em;
+}
+
+.titleContainer{
+  text-align: center;
+  margin-top: 1.5%;
+  font-size: 2em;
+}
+
+.searchButton{
+  height: 70%;
+  cursor: pointer;
+  margin-left: 1%;
+}
+
+.searchBarContainer{
+  width: 100%;
+  height: 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: .5%;
+}
+
+.nonFlex{
+  height: 85%;
+}
+
+.dateContainer{
+  margin-top: 1.5%;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.imageContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.image{
+  margin-left: 2px;
+  margin-right: 2px;
+  width: 125px;
+  height: 125px;
+  cursor: pointer;
+}
+
+.nextButton{
+  position: absolute;
+  width: 13%;
+  height: 5%;
+  top: 1%;
+  right: 1%;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.previousButton{
+  position: absolute;
+  width: 13%;
+  height: 5%;
+  left: 1%;
+  top: 1%;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.pictureClickBox{
+  visibility: hidden;
+}
+
+.shadow{
+  box-shadow: 0 3px 6px rgba(0,0,0,.08), 0 3px 6px rgba(0,0,0,.15);
+}
+
+@media only screen and (max-width: 1000px) {
+  .searchBox{
+    width: 780px;
+  }
+  .image{
+    height: 100px;
+    width: 100px;
+  }
+  .nonFlex{
+    width: 780px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .searchBox{
+    width: 600px;
+  }
+  .nonFlex{
+    min-width: 600px;
+  }
+  .image{
+    height: 80px;
+    width: 80px;
+  }
+  .fullPage{
+    overflow: auto;
+  }
+  .homeBody{
+    overflow: auto;
+  }
+  .nonFlex{
+    width: 600px;
+  }
+  .navLeft{
+    font-size: 1em;
+  }
+  .navRight{
+    font-size: 1em;
+  }
+  .yearSelect{
+    font-size: 1em;
+  }
+  .monthSelect{
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .homeBody{
+    display: block;
+    overflow: auto;
+  }
+  .countContainer{
+    font-size: 1em;
+  }
+
+  .nextButton{
+    width: 19%;
+  }
+  .previousButton{
+    width: 19%
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .countContainer{
+    font-size: .8em;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  .copyrightContainer{
+    position: static;
+  }
+}

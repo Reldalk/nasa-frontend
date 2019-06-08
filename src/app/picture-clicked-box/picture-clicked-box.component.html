@@ -1,0 +1,23 @@
+<div class="pictureClickBox">
+  <div class="block"></div>
+  <div class="pictureClickBoxContainer">
+    <img class="exit" (click)="onExit()" src="../../assets/X.png">
+    <div class="dateContainer">{{this.currentPictureDate}}</div>
+    <div class="titleContainer">{{this.currentPicture.title}}</div>
+    <div class="pictureContainer">
+      <a href="{{this.currentPicture.hdurl || this.currentPicture.url}}" target="_blank"><img class="mediumPicture" src={{this.currentPicture.url}}></a>
+    </div>
+    <div class="searchContainer">
+      <input class="searchBox" placeholder="Search for similar images" type="text">
+      <img (click)="searchClick($event)" class="searchButton" src="http://www.clker.com/cliparts/F/G/4/L/Q/f/search-button-png-hi.png">
+    </div>
+    <div class="descriptionContainer shadow">
+      <br/>
+      <p class="descriptionText">{{this.currentPicture.explanation}}</p>
+      <br/>
+    </div>
+    <div class="copyrightContainer">
+      <p *ngIf=this.currentPicture.copyright>copyright: {{this.currentPicture.copyright}}</p>
+    </div>
+  </div>
+</div>

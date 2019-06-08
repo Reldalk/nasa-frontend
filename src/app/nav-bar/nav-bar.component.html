@@ -1,0 +1,15 @@
+<div class="navBar">
+  <div *ngIf="!this.showSearchBar" class="navLeft">
+    <a href="" class="cursor">Calander</a>
+  </div>
+  <div *ngIf="this.showSearchBar" class="navLeft">
+    <input class="navSearch" placeholder="Enter search term" />
+    <img class="searchSymbol" (click)="searchClick($event)" src="../../assets/search.png">
+  </div>
+  <div class="navMiddle">
+    <img class="logoImage" src="../../assets/apod-logo.png">
+  </div>
+  <div class="navRight">
+    <a href="https://www.JonathonGarrett.com" class="cursor" target="_blank">About Me</a>
+  </div>
+</div>

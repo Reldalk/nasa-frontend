@@ -1,0 +1,60 @@
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+<div class="fullPage">
+  <div class="block"></div>
+
+  <nav-bar [showSearchBar]="true"></nav-bar>
+
+  <body class="homeBody">
+    <div class="pictureClickBox">
+
+      <picture-clicked-box *ngIf=this.currentPicture [currentPicture]="this.currentPicture"
+      (toExit)="exit()">
+      </picture-clicked-box>
+      
+    </div>
+    <div class="nonFlexContainer">
+      <div class="calanderContainer">
+        <div class="calander">
+          <div class="calandarHeader">
+            <div class="leftCalandarBox"><button class="calanderButton previousButton" (click)="previousMonth()">Previous Month</button></div>
+            <div *ngIf=this.currentMonth class="middleCalandarBox">
+              <div class="dateWrap">
+                <select (change)="onMonthChange($event)" selected=this.currentMonth class="monthSelect">
+                  <option *ngFor="let month of months; let i = index" value={{i}}>{{month}}</option>
+                </select>
+                <img (click)="changeMonthClick()" class="cursor arrowMonth" src="../../assets/arrow.png">
+                <h3 (click)="changeMonthClick()" class="cursor monthName month">{{this.monthNames[this.currentMonth - 1]}}</h3>
+                <h3 class="monthName">&nbsp;-&nbsp;</h3>
+                <select (change)="onYearChange($event)" selected=this.currentYear class="yearSelect">
+                  <option *ngFor="let year of years" value={{year}}>{{year}}</option>
+                </select>
+                <h3 (click)="changeYearClick()" class="cursor monthName year">{{this.currentYear}}</h3>
+                <img (click)="changeYearClick()" class="cursor arrowYear" src="../../assets/arrow.png">
+              </div>
+            </div>
+            <div class="rightCalandarBox"><button class="calanderButton nextButton" (click)="nextMonth()">Next Month</button></div>
+          </div>
+          <div class="dayContainer">
+            <div class="day">Sunday</div>
+            <div class="day">Monday</div>
+            <div class="day">Tueday</div>
+            <div class="day">Wednesday</div>
+            <div class="day">Thursday</div>
+            <div class="day">Friday</div>
+            <div class="day">Saturday</div>
+          </div>
+          <div *ngFor="let week of calander; let i=index">
+            <div class="dayContainer">
+              <div *ngFor="let day of week; let j=index">
+                <div id="{{i}}{{j}}" (click)="!day.url || pictureClick($event)" [ngClass]="day.style">
+                  <div class="cornerDayNumber">{{day.day}}</div><img class="apodImage" src={{day.thumbnail}} [hidden]="!day.thumbnail">
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+  </body>
+</div>

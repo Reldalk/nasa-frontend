@@ -1,0 +1,49 @@
+.navBar{
+  height: 8vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+}
+
+.searchSymbol{
+  height: 22px;
+  width: 22px;
+  margin-left: 5px;
+  max-height: 100%;
+  cursor: pointer;
+}
+
+.navLeft{
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5em;
+}
+.navRight{
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5em;
+}
+
+.navMiddle{
+  width: 50%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoImage{
+  height: 80%;
+}
+
+a:visited{
+  color: white;
+}
